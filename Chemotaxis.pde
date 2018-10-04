@@ -21,6 +21,11 @@ void setup()
     groupFourQuad.show();
     groupFourQuad.move();
  }  
+void mousePressed()
+{
+  background(0);
+  redraw();
+}
  class Bacteria    
  {     
     int myX, myY, myColor, myXMove, myYMove;
