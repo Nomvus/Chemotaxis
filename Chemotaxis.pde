@@ -1,39 +1,47 @@
+Bacteria [] groupOneQuad = new Bacteria[2000];
+Bacteria [] groupTwoQuad = new Bacteria[2000];
+Bacteria [] groupThreeQuad = new Bacteria[2000];
+Bacteria [] groupFourQuad = new Bacteria[2000];
 
-int [] movingX = {4, -4, -4, 4};
-int [] movingY = {4, 4, -4, -4};
-Bacteria groupOneQuad = new Bacteria(movingX[0], movingY[0]);
-Bacteria groupTwoQuad = new Bacteria(movingX[1], movingY[1]);
-Bacteria groupThreeQuad = new Bacteria(movingX[2], movingY[2]);
-Bacteria groupFourQuad = new Bacteria(movingX[3], movingY[3]);
 void setup()   
  {     
+  for(int i = 0; i < groupOneQuad.length; i++){
+    groupOneQuad[i] = new Bacteria(6, 6);
+    groupTwoQuad[i] = new Bacteria(4, 6);
+    groupThreeQuad[i] = new Bacteria(6, 4);
+    groupFourQuad[i] = new Bacteria(4, 4);
+  }
   background(0);
- 	size(1000, 1000);
+   size(1000, 1000);
  }   
  void draw()   
  {    
-    groupOneQuad.show();
-    groupOneQuad.move();
-    groupTwoQuad.show();
-    groupTwoQuad.move();
-    groupThreeQuad.show();
-    groupThreeQuad.move();
-    groupFourQuad.show();
-    groupFourQuad.move();
- }  
+   for(int i = 0; i < groupOneQuad.length; i++){
+    groupOneQuad[i].show();
+    groupOneQuad[i].move();
+    groupTwoQuad[i].show();
+    groupTwoQuad[i].move();
+    groupThreeQuad[i].show();
+    groupThreeQuad[i].move();
+    groupFourQuad[i].show();
+    groupFourQuad[i].move();
+   }
+ }
 void mousePressed()
 {
   background(0);
+
   redraw();
 }
  class Bacteria    
  {     
     int myX, myY, myColor, myXMove, myYMove;
+
     Bacteria(int x, int y) {
       myX = myY = 500;
       myColor = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
-      x = myXMove;
-      y = myYMove;
+      myXMove = x;
+      myYMove = y;
     }
     void move()
     {
@@ -43,10 +51,6 @@ void mousePressed()
     void show()
     {
       fill(myColor);
-      ellipse(myX, myY, 30, 30);
-      
+      ellipse(myX, myY, 3, 3); 
     }
-    
-    
-
- }    
+ }   
