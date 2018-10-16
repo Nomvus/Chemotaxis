@@ -1,7 +1,7 @@
-Bacteria [] groupOneQuad = new Bacteria[2000];
-Bacteria [] groupTwoQuad = new Bacteria[2000];
-Bacteria [] groupThreeQuad = new Bacteria[2000];
-Bacteria [] groupFourQuad = new Bacteria[2000];
+Bacteria [] groupOneQuad = new Bacteria[20];
+Bacteria [] groupTwoQuad = new Bacteria[20];
+Bacteria [] groupThreeQuad = new Bacteria[20];
+Bacteria [] groupFourQuad = new Bacteria[20];
 
 void setup()   
  {     
@@ -27,12 +27,7 @@ void setup()
     groupFourQuad[i].move();
    }
  }
-void mousePressed()
-{
-  background(0);
 
-  redraw();
-}
  class Bacteria    
  {     
     int myX, myY, myColor, myXMove, myYMove;
